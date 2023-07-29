@@ -1,0 +1,49 @@
+
+
+    {% extends "base.html" %}
+    {%block start%}
+
+    <div class="container-fluid mt-3">
+      <h3>Add New Student</h3>
+      <p>Yoy can add new Student from here.</p>
+    </div>
+
+
+
+    <div class="container mt-5">
+      <form class="col-6 mx-auto card">
+       <div>
+         <label for="first name example" class="form-label">First Name</label>
+         <input name=" first_name" type="text"class="form-control" />
+         
+       <div>
+         <label for="last name example" class="form-label">Last Name</label>
+         <input name=" last_name" type="text"class="form-control" />
+       </div>
+     
+       <div class="col-4" >
+         <label for="only roll" class="form-label">Roll</label>
+         <input name="roll" type="number" class="form-control" />
+         <div class="form-text">                                                
+       </div>
+     
+       <div class="container mt-5" >
+         <select>
+           <option value="">Select Department</option>
+               {% for department in departments %}
+            <option value="{{ department.id }}">{{department.name }}</option>
+           {% endfor %}
+         </select>                                                
+       </div>
+         <hr>
+     
+       <div lass="container mt-5">
+       <button type="submit" class="btn btn-primary">Add Student</button>
+       </div>
+     </form>
+     </div>
+
+    {%endblock%}
+
+
+    
